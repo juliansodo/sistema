@@ -1,13 +1,16 @@
+const bodyParser = require('body-parser');
+
 const express = require('express'),
     app = express(),
     passport = require('passport'),
     auth = require('./rutas/auth'),
     rutas = require("./rutas/main"),
+    indice = require("./rutas/index"),
     cookieParser = require('cookie-parser'),
     cookieSession = require('cookie-session');
     bd = require("./configBd");
-    const path = require("path")
-    
+    path = require("path");
+    const bodyparser = require("body-parser");
 
 
 //auth config
@@ -21,7 +24,7 @@ app.use(cookieSession({
     keys: ['af4af4wfaf21t14tasaxasdasfrwf3211']
 }));
 app.use(cookieParser());
-
+app.use(bodyparser());
 //public config
 app.set('views', path.join(__dirname, 'views'));
 app.set('public', path.join(__dirname, 'public'));
@@ -29,7 +32,7 @@ app.set("view engine", "ejs");
 
 //rutas 
 rutas(app,passport);
-
+indice(app, passport);
 
 
 //server config

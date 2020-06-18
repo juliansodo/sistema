@@ -1,3 +1,4 @@
+
 module.exports = (app, passport) => {
     app.get('/auth/google', passport.authenticate('google', {
         scope: ['https://www.googleapis.com/auth/userinfo.profile']
@@ -11,7 +12,13 @@ module.exports = (app, passport) => {
             res.redirect('/');
         }
     );
-
+    app.get('/logout', (req, res) => {
+        res.redirect('https://accounts.google.com/o/oauth2/revoke?token='+req.session.token)
+        req.logout();
+        req.session = null;
+        res.redirect('/auth/google');
+        
+    });
 }
 /*
 passport.use(new GoogleStrategy({
