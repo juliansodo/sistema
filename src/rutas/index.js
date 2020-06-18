@@ -4,7 +4,7 @@ module.exports = (app, passport) => {
             res.cookie('token', req.session.token);
             res.render("index")
         } else {
-            res.redirect("/auth/google");
+            res.render("login")
         }
     });
     app.get('/form', (req, res) => {
