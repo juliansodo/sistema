@@ -7,4 +7,12 @@ module.exports = (app, passport) => {
             res.redirect("/auth/google");
         }
     });
+    app.get('/form', (req, res) => {
+        if (req.session.token) {
+            res.cookie('token', req.session.token);
+            res.render("formulario")
+        } else {
+            res.redirect("/auth/google");
+        }
+    });
 }
