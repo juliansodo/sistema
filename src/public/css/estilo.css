@@ -7,6 +7,15 @@ body{
 header{
     margin-top: 70px;
 }
+.card{
+    width: 90vh;
+    text-align: center;
+    margin: auto;
+    border: 3px solid #0f0d0d2c !important;
+    border-radius: 100px !important;
+    background-color: #ffffffb0 !important;
+    box-shadow: 10px 10px 5px -2px !important;
+}
 .btn-login{
     background-color: #1a237e;
     box-shadow: 10px 5px 5px #000000;
@@ -31,11 +40,21 @@ header{
 }
 @media (max-width: 767px) {
     header{
-        margin-top: 50px;
+        margin-top: 20px;
+    }
+    .card{
+        width: 50vh;
+        text-align: center;
+        margin: auto;
     }
 }
 @media (min-width: 768px) and (max-width: 1200px) {
     header{
-        margin-top: 110px;
+        margin-top: 60px;
+    }
+    .card{
+        width: 80vh;
+        text-align: center;
+        margin: auto;
     }
 }

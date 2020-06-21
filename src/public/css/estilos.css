@@ -1,0 +1,42 @@
+body{
+    background: #a8c0ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #543eb8, #a8c0ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+header{
+    margin-top: 70px;
+}
+.btn-login{
+    background-color: #1a237e;
+    box-shadow: 10px 5px 5px #000000;
+    padding: 15px;
+    width: 190px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+	transition: .3s ease;
+}
+.text-enlace{
+    color: #ffffff;
+    font-size: 20px;
+}
+ .btn-login:hover{
+    background-color: #7986cb  ;
+    color: #2695f0;
+    border: 2px solid  #2695f0;
+}
+.ola{
+    position: relative;
+    top: 126px;
+}
+@media (max-width: 767px) {
+    header{
+        margin-top: 50px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+    header{
+        margin-top: 110px;
+    }
+}
+
