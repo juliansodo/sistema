@@ -39,7 +39,7 @@ indice(app, passport);
 
 
 //server config
-app.set("puerto", 3000 || process.env.PORT);
+app.set("puerto", process.env.PORT || 3000);
 
 app.listen(app.get("puerto"), ()=>
 {
