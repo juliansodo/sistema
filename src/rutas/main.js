@@ -1,5 +1,7 @@
 
 module.exports = (app, passport) => {
+    const rutasIn = require("./in");
+    rutasIn(app,passport);
     const http  = require("http")
     app.get('/auth/google', passport.authenticate('google', {
         scope: ['https://www.googleapis.com/auth/userinfo.profile']
@@ -9,8 +11,9 @@ module.exports = (app, passport) => {
             failureRedirect: '/login'
         }),
         (req, res) => {
+            console.log(req.user.profile);
             req.session.token = req.user.token;
-            req.session.user = req.profile;
+            req.session.user = req.user.profile;
             res.redirect('/');
         }
     );

@@ -2,7 +2,10 @@ module.exports = (app, passport) => {
     app.get('/', (req, res) => {
         if (req.session.token) {
             res.cookie('token', req.session.token);
-            res.render("index", {user: req.user});
+            res.render("index", 
+            {
+                user: req.session.user
+            });
         } else {
             res.redirect("/login")
         }

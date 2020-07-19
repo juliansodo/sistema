@@ -1,7 +1,4 @@
-var express = require('express');
+module.exports = (app, passport) => {
 
 
-
-
-  
-module.exports = router;
+}

@@ -1,0 +1,35 @@
+<div id="navbar_in">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><b>Logo</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-indigo" href="/form"><b>Nueva publicación</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/myposts">Mis publicaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/myposts">Precios</a>
+            </li>
+          </ul>
+          <span class="nav-item dropdown">
+              <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="<%= user.photos[0].value %>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+              </a>
+              <div class="dropdown-menu" style="left: -130px !important;" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Mis datos</a>
+                <a class="dropdown-item" href="#">Cambiar contraseña</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="logout">Salir</a>
+              </div>
+            </span>
+        </div>
+      </nav>
+</div>

@@ -34,7 +34,7 @@ module.exports = (passport) => {
                     User.create({googleId: profile.id, givenName: profile.name.givenName, familyName: profile.name.familyName, picture:profile.photos[0].value, token:accessToken });
                   }
                   return done(null, {
-                    profile: profile,
+                    profile: JSON.parse(JSON.stringify(profile)),
                     token: accessToken
                 });
             });
