@@ -1,5 +1,6 @@
 
 module.exports = (app, passport) => {
+    const http  = require("http")
     app.get('/auth/google', passport.authenticate('google', {
         scope: ['https://www.googleapis.com/auth/userinfo.profile']
     }));
@@ -9,14 +10,16 @@ module.exports = (app, passport) => {
         }),
         (req, res) => {
             req.session.token = req.user.token;
+            req.session.user = req.profile;
             res.redirect('/');
         }
     );
     app.get('/logout', (req, res) => {
-        res.redirect('https://accounts.google.com/o/oauth2/revoke?token='+req.session.token)
+        app.post('https://accounts.google.com/o/oauth2/revoke?token='+req.session.token)
+       // res.redirect('https://accounts.google.com/o/oauth2/revoke?token='+req.session.token)
         req.logout();
         req.session = null;
-        res.redirect('/auth/google');
+        res.redirect("/login");
         
     });
 }

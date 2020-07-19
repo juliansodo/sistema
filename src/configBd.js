@@ -1,7 +1,10 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('sql10348228', 'sql10348228', '3BVwdlGr9N', {
-    host: 'sql10.freesqldatabase.com',
-    dialect: 'mysql'
+const sequelize = new Sequelize('pruebatesting', 'pruebatest', '123123jJ', {
+    host: 'db4free.net',
+    dialect: 'mysql',
+    dialectOptions: {
+      timeout: 42
+    }
   });
 
   sequelize

@@ -13,6 +13,7 @@ const express = require('express'),
     const bodyparser = require("body-parser");
 
 
+
 //auth config
 auth(passport);
 app.use(passport.initialize());
@@ -24,7 +25,9 @@ app.use(cookieSession({
     keys: ['af4af4wfaf21t14tasaxasdasfrwf3211']
 }));
 app.use(cookieParser());
-app.use(bodyparser());
+app.use(bodyparser.urlencoded({
+    extended: true
+  }));
 //public config
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
