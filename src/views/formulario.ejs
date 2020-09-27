@@ -1,52 +1,64 @@
 <!doctype html>
 <html>
 
-  <%- include('./utils/head.ejs'); %>
+<%- include('./utils/head.ejs'); %>
 
 <body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-transition="slide">
-        <div class="form-group">
-          <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="Nombre">
-        </div>
-        <a href="#" class="navigate-right">Siguiente campo</a>
-      </section>
-
-      <section data-transition="zoom">
-        <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Email" name="Email">
-        </div>
-        <a href="#" class="navigate-right">Siguiente campo</a>
-      </section>
-
-      <section data-transition="zoom">
-        <div class="form-group">
-          <input type="text" class="form-control" id="linkedin" placeholder="Linkedin" name="Linkedin">
-        </div>
-        <a href="#" class="navigate-right">Siguiente campo</a>
-      </section>
-
-      <section data-transition="zoom">
-        <div class="form-group">
-          <p>captura</p>
-        </div>
-        <a href="#" class="navigate-right">Siguiente campo</a>
-      </section>
-
-      <section data-transition="zoom">
-        <div class="form-group">
-          <input type="number" class="form-control" id="salario" placeholder="Salario aproximado" name="Salario">
-        </div>
-        <a href="#" class="navigate-right">Siguiente campo</a>
-      </section>
-
-      <section data-transition="zoom">
-        <div class="form-group">
-          <textarea  class="form-control" id="mensaje" placeholder="Mensaje" name="Mensaje"></textarea>
-        </div>
-      </section>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <form class="form-group">
+          <input class="form-in" type="text" id="nombre" name="Nombre" required>
+          <label class="lbl-nombre">
+            <span class="texto-lbl">Nombre</span>
+          </label>
+        </form>
+      </div>
+      <div class="swiper-slide">
+        <form class="form-group">
+          <input class="form-in" type="email" id="email" name="Email" required>
+          <label class="lbl-nombre">
+            <span class="texto-lbl">Email</span>
+          </label>
+        </form>
+      </div>
+      <div class="swiper-slide">
+        <form class="form-group">
+          <input class="form-in" type="text" id="linkedin" name="Linkedin" required>
+          <label class="lbl-nombre">
+            <span class="texto-lbl">Linkedin</span>
+          </label>
+        </form>
+      </div>
+      <div class="swiper-slide">
+        <form class="form-group">
+          <input class="form-in" type="url" id="url" required>
+          <label class="lbl-nombre">
+            <span class="texto-lbl">URL de la imágen</span>
+          </label>
+        </form>
+        <div id="imagen">LALAL</div>
+      </div>
+      <div class="swiper-slide">
+        <form class="form-group">
+          <input class="form-in" type="number" id="salario" name="Salario" required>
+          <label class="lbl-nombre">
+            <span class="texto-lbl">Salario</span>
+          </label>
+        </form>
+      </div>
+      <div class="swiper-slide">
+        <form class="form-group">
+          <textarea class="form-in" id="mensaje" name="Mensaje" required></textarea>
+          <label class="lbl-nombre">
+            <span class="texto-lbl">Mensaje</span>
+          </label>
+        </form>
+        <button class="btn-enviar">Enviar</button>
+      </div>
     </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
   </div>
 
   <%- include('./utils/footer.ejs'); %>
